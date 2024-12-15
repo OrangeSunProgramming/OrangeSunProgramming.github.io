@@ -1,3 +1,4 @@
+/* Global styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,17 +8,17 @@ body {
   background: #f4f4f4;
 }
 
+/* Header styles */
 header {
   background: #333;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
 }
 
 nav ul {
@@ -38,22 +39,79 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #4CAF50;
+  color: #4CAF50; /* Change color on hover */
 }
 
-section {
-  padding: 20px;
-  background: #fff;
+/* About Me section */
+#about {
+  padding: 40px;
   margin: 20px auto;
   max-width: 800px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-footer {
+#about h2 {
   text-align: center;
-  padding: 10px;
-  background: #333;
+  margin-bottom: 20px;
+}
+
+#about ul {
+  padding-left: 20px;
+}
+
+#about ul li {
+  margin-bottom: 10px;
+}
+
+/* Projects section */
+#projects {
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
   color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#projects ul li {
+  margin-bottom: 15px;
+}
+
+#projects ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#projects ul li a:hover {
+  color: #4CAF50; /* Hover color */
+  transform: translateX(10px); /* Hover effect for project links */
+}
+
+/* Contact section */
+#contact {
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -62,12 +120,11 @@ form {
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 input, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -76,14 +133,22 @@ input, textarea {
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
 }
 
 button:hover {
   background-color: #45a049;
 }
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
 
