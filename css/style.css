@@ -46,12 +46,31 @@ nav ul li a:hover {
   color: #4CAF50; /* Change color on hover */
 }
 
+.about-content {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  max-width: 600px;
+}
+
 .profile-pic {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-right: 20px;
   object-fit: cover;
+  margin-right: 20px;
+}
+
+.skills i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: #333;
+}
+
+.skills i:hover {
+  color: #ff9800;
 }
 
 /* About Me section */
