@@ -46,33 +46,6 @@ nav ul li a:hover {
   color: #4CAF50; /* Change color on hover */
 }
 
-.about-content {
-  display: flex;
-  align-items: center;
-}
-
-.text {
-  max-width: 600px;
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 20px;
-}
-
-.skills i {
-  font-size: 30px;
-  margin-right: 20px;
-  color: #333;
-}
-
-.skills i:hover {
-  color: #ff9800;
-}
-
 /* About Me section */
 #about {
   padding: 40px;
@@ -95,6 +68,27 @@ nav ul li a:hover {
 
 #about ul li {
   margin-bottom: 10px;
+}
+
+/* Adjusting profile image */
+.profile-pic {
+  width: 120px; /* Set the desired width */
+  height: 120px; /* Set the desired height */
+  border-radius: 50%; /* Keeps the image circular */
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
+  margin-right: 20px; /* Adds space between the image and the text */
+}
+
+/* Section layout for About Me */
+.about-content {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment of image and text */
+  justify-content: flex-start; /* Aligns the content to the left */
+  margin-bottom: 20px; /* Adds space below the section */
+}
+
+.text {
+  max-width: 700px; /* Controls the width of the text area */
 }
 
 /* Projects section */
@@ -194,5 +188,6 @@ footer {
   background: #333;
   color: #fff;
 }
+
 
 
