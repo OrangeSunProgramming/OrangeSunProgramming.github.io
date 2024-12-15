@@ -90,6 +90,11 @@ nav ul li a:hover {
   margin: 0 auto; /* Centers the text block */
 }
 
+.skills i {
+  font-size: 40px; /* Adjust the size */
+  margin-right: 15px;
+}
+
 /* Projects section */
 #projects {
   padding: 40px;
