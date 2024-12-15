@@ -74,21 +74,20 @@ nav ul li a:hover {
 .profile-pic {
   width: 120px; /* Set the desired width */
   height: 120px; /* Set the desired height */
-  border-radius: 50%; /* Keeps the image circular */
-  object-fit: cover; /* Ensures the image fills the circle without distortion */
-  margin-right: 20px; /* Adds space between the image and the text */
+  border-radius: 50%; /* Ensures the image is circular */
+  object-fit: cover; /* Ensures the image fits nicely without distortion */
+  margin: 0 auto 20px auto; /* Center the image and add space below */
+  display: block; /* Ensures the image is displayed as a block, allowing centering */
 }
 
 /* Section layout for About Me */
 .about-content {
-  display: flex;
-  align-items: center; /* Ensures vertical alignment of image and text */
-  justify-content: flex-start; /* Aligns the content to the left */
-  margin-bottom: 20px; /* Adds space below the section */
+  text-align: center; /* Centers the text and image */
 }
 
 .text {
   max-width: 700px; /* Controls the width of the text area */
+  margin: 0 auto; /* Centers the text block */
 }
 
 /* Projects section */
