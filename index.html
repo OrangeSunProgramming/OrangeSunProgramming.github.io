@@ -75,19 +75,15 @@
   <!-- Smooth Scroll Script -->
   <script>
     $(document).ready(function() {
-      // Smooth scrolling when clicking on anchor links
       $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault(); // Prevent the default anchor click behavior
+        e.preventDefault();
 
-        // Get the target element
         var target = this.hash;
         var $target = $(target);
 
-        // Animate the scroll
         $('html, body').animate({
           scrollTop: $target.offset().top
-        }, 800, function() {
-          // Optional: Add hash to the URL after scrolling
+        }, 500, function() {
           window.location.hash = target;
         });
       });
