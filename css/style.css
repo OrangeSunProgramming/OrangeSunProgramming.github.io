@@ -90,9 +90,14 @@ nav ul li a:hover {
   margin: 0 auto; /* Centers the text block */
 }
 
-.skills i {
-  font-size: 70px; /* Adjust the size */
+.skills i, .skills img {
+  font-size: 40px; /* Adjust the icon size */
   margin-right: 15px;
+}
+
+.skills img {
+  width: 40px;  /* Customize the size to fit your design */
+  height: 40px; /* Ensure it's proportional */
 }
 
 /* Projects section */
