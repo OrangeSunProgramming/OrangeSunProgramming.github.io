@@ -81,34 +81,38 @@ nav ul li a:hover {
 
 /* Projects section */
 #projects {
-  padding: 40px;
-  background: #fff;
-  text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Blue gradient */
+    padding: 50px 0;
+    text-align: center;
+    color: #ffffff; /* White text for contrast */
 }
 
 #projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+    font-size: 2.5rem; /* Adjusted font size for better visibility */
+    font-weight: 600; /* Bold header */
+    margin-bottom: 20px;
 }
 
-#projects ul {
-  list-style: none;
-  padding: 0;
+#projects p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0; /* Slightly lighter text for readability */
 }
 
-#projects ul li {
-  margin-bottom: 15px;
+.project {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background for individual projects */
+    border-radius: 8px;
 }
 
-#projects ul li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+.project a {
+    text-decoration: none;
+    color: #3b82f6; /* Blue links */
 }
 
-#projects ul li a:hover {
-  color: #e52e71; /* Hover effect */
+.project a:hover {
+    color: #1e40af; /* Darker blue for hover effect */
 }
 
 /* Contact section */
