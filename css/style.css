@@ -91,13 +91,13 @@ nav ul li a:hover {
 }
 
 .skills i, .skills img {
-  font-size: 40px; /* Adjust the icon size */
+  font-size: 100px; /* Adjust the icon size */
   margin-right: 15px;
 }
 
 .skills img {
-  width: 40px;  /* Customize the size to fit your design */
-  height: 40px; /* Ensure it's proportional */
+  width: 100px;  /* Customize the size to fit your design */
+  height: 100px; /* Ensure it's proportional */
 }
 
 /* Projects section */
