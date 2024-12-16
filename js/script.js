@@ -1,84 +1,45 @@
-// Smooth scrolling for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  });
-});
-
-// Intersection Observer for fade-in, shakeX, shakeY, or combined animations
-const fadeElements = document.querySelectorAll('.animate-fade'); // Elements for fade-in
-const shakeXElements = document.querySelectorAll('.animate-shakeX'); // Elements for shake horizontally
-const shakeYElements = document.querySelectorAll('.animate-shakeY'); // Elements for shake vertically
-const fadeShakeXElements = document.querySelectorAll('.animate-fade-shakeX'); // Fade-in + shake horizontally
-const fadeShakeYElements = document.querySelectorAll('.animate-fade-shakeY'); // Fade-in + shake vertically
-
-// Observer for fade-in
+// IntersectionObserver for triggering animations when an element is in view
 const fadeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate__animated', 'animate__fadeIn');
-      observer.unobserve(entry.target); 
-    }
-  });
-}, { threshold: 0.5 }); // Animation triggers immediately when visible
-
-// Observer for shakeX
-const shakeXObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__shakeX'); // Apply shakeX
-      observer.unobserve(entry.target); // Stop observing
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
 
-// Observer for shakeY
-const shakeYObserver = new IntersectionObserver((entries, observer) => {
+// Observing fade-in elements
+document.querySelectorAll('.animate__fadeIn').forEach(element => {
+  fadeObserver.observe(element);
+});
+
+// Observing shake animations (like Python logo)
+const shakeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__shakeY'); // Apply shakeY
-      observer.unobserve(entry.target); // Stop observing
+      entry.target.classList.add('animate__animated', 'animate__shakeX');
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
 
-// Observer for fade-in + shakeX
-const fadeShakeXObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__fadeIn'); // Apply fade-in
-      entry.target.addEventListener('animationend', () => {
-        entry.target.classList.add('animate__shakeX'); // Add shakeX after fade-in ends
-      }, { once: true }); // Ensure this runs only once
-      observer.unobserve(entry.target); // Stop observing
-    }
-  });
-}, { threshold: 0.5 });
+document.querySelectorAll('.animate__shakeX').forEach(element => {
+  shakeObserver.observe(element);
+});
 
-// Observer for fade-in + shakeY
-const fadeShakeYObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__fadeIn'); // Apply fade-in
-      entry.target.addEventListener('animationend', () => {
-        entry.target.classList.add('animate__shakeY'); // Add shakeY after fade-in ends
-      }, { once: true }); // Ensure this runs only once
-      observer.unobserve(entry.target); // Stop observing
-    }
-  });
-}, { threshold: 0.5 });
+// Smooth Scroll for anchor links
+$(document).ready(function() {
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
 
-// Apply observers to respective elements
-fadeElements.forEach(el => fadeObserver.observe(el));
-shakeXElements.forEach(el => shakeXObserver.observe(el));
-shakeYElements.forEach(el => shakeYObserver.observe(el));
-fadeShakeXElements.forEach(el => fadeShakeXObserver.observe(el));
-fadeShakeYElements.forEach(el => fadeShakeYObserver.observe(el));
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').animate({
+      scrollTop: $target.offset().top
+    }, 500, function() {
+      window.location.hash = target;
+    });
+  });
+});
+
