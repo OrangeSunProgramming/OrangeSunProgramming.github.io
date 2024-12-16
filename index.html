@@ -40,9 +40,9 @@
         <p>When I’m not immersed in machine learning projects, I enjoy exploring cutting-edge technologies, gaming, and creating tools that simplify complex concepts for learners worldwide. I’m seeking opportunities to contribute to impactful projects, work with innovative teams, and continue to grow as a data scientist and machine learning expert.</p>
         <p>Skills:</p>
         <div class="skills">
-          <i class="fab fa-python animate_shakeY"></i>
-          <img src="images/tensorflow-logo-2.svg" alt="TensorFlow" class="animate-shakeY" />
-          <i class="fas fa-brain animate-fade-shakeX"></i>
+          <i class="fab fa-python animate_animated animate__shakeX"></i>
+          <img src="images/tensorflow-logo-2.svg" alt="TensorFlow" class="animate__animated animate__fadeIn" />
+          <i class="fas fa-brain animate_animated animate__shakeX"></i>
         </div>
       </div>
     </div>
@@ -84,7 +84,30 @@
 
   <!-- Include jQuery library -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
+
+  <!-- IntersectionObserver and Animation Script -->
+  <script>
+    // IntersectionObserver to trigger animations
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__animated', 'animate__fadeIn');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Select all elements with the class 'animate__fadeIn'
+    document.querySelectorAll('.animate__fadeIn').forEach(element => {
+      fadeObserver.observe(element);
+    });
+
+    // Select all elements with the class 'animate__shakeX' or 'animate__shakeY' and trigger the shake animation
+    document.querySelectorAll('.animate__shakeX, .animate__shakeY').forEach(element => {
+      fadeObserver.observe(element);
+    });
+  </script>
+
   <!-- Smooth Scroll Script -->
   <script>
     $(document).ready(function() {
