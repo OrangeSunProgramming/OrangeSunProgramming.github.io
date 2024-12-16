@@ -55,9 +55,9 @@ const fadeShakeXObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate__animated', 'animate__fadeIn'); // Apply fade-in
-      setTimeout(() => {
-        entry.target.classList.add('animate__shakeX'); // Add shakeX after fade-in
-      }, 1000); // Adjust delay if needed
+      entry.target.addEventListener('animationend', () => {
+        entry.target.classList.add('animate__shakeX'); // Add shakeX after fade-in ends
+      }, { once: true }); // Ensure this runs only once
       observer.unobserve(entry.target); // Stop observing
     }
   });
@@ -68,15 +68,15 @@ const fadeShakeYObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate__animated', 'animate__fadeIn'); // Apply fade-in
-      setTimeout(() => {
-        entry.target.classList.add('animate__shakeY'); // Add shakeY after fade-in
-      }, 1000); // Adjust delay if needed
+      entry.target.addEventListener('animationend', () => {
+        entry.target.classList.add('animate__shakeY'); // Add shakeY after fade-in ends
+      }, { once: true }); // Ensure this runs only once
       observer.unobserve(entry.target); // Stop observing
     }
   });
 }, { threshold: 0.5 });
 
-// Apply observers
+// Apply observers to respective elements
 fadeElements.forEach(el => fadeObserver.observe(el));
 shakeXElements.forEach(el => shakeXObserver.observe(el));
 shakeYElements.forEach(el => shakeYObserver.observe(el));
