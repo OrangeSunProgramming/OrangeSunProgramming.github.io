@@ -123,6 +123,17 @@
           window.location.hash = target;
         });
       });
+
+      function shakeIcons() {
+        $('.fa-python, .fa-brain').addClass('animate__shakeX');
+        $('.animate__shakeX').removeClass('animate__shakeX'); // Ensure the animation restarts every time
+
+        setTimeout(function() {
+          $('.fa-python, .fa-brain').removeClass('animate__shakeX');
+        }, 5000);
+      }
+
+      shakeIcons()
     });
   </script>
 </body>
