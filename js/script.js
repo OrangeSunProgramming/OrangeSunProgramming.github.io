@@ -24,11 +24,11 @@ const fadeShakeYElements = document.querySelectorAll('.animate-fade-shakeY'); //
 const fadeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__fadeIn'); // Apply fade-in
-      observer.unobserve(entry.target); // Stop observing
+      entry.target.classList.add('animate__animated', 'animate__fadeIn');
+      observer.unobserve(entry.target); 
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% visible
+}, { threshold: 0 }); // Animation triggers immediately when visible
 
 // Observer for shakeX
 const shakeXObserver = new IntersectionObserver((entries, observer) => {
