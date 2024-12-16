@@ -72,8 +72,8 @@ nav ul li a:hover {
 
 /* Adjusting profile image */
 .profile-pic {
-  width: 120px; /* Set the desired width */
-  height: 120px; /* Set the desired height */
+  width: 170px; /* Set the desired width */
+  height: 170px; /* Set the desired height */
   border-radius: 50%; /* Ensures the image is circular */
   object-fit: cover; /* Ensures the image fits nicely without distortion */
   margin: 0 auto 20px auto; /* Center the image and add space below */
