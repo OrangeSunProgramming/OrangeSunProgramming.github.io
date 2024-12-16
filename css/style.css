@@ -83,6 +83,7 @@ nav ul li a:hover {
 /* Section layout for About Me */
 .about-content {
   text-align: center; /* Centers the text and image */
+  font-size: 2rem;
 }
 
 .text {
