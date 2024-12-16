@@ -13,19 +13,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Intersection Observer for fade-in and slide-in animations
-const elements = document.querySelectorAll('.animate__animated'); // Select all elements with Animate.css animations
+// Intersection Observer for shaking elements
+const shakeElements = document.querySelectorAll('.animate-shake'); // Select all elements you want to shake
 
 // Set up the Intersection Observer
-const observer = new IntersectionObserver((entries, observer) => {
+const shakeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate__fadeIn'); // Trigger fade-in animation when element is in view
-      // You can add more animations based on the class names, like slideIn or bounce
-      observer.unobserve(entry.target); // Stop observing once animation is applied
+      entry.target.classList.add('animate__animated', 'animate__shakeX', 'animate_shakeY'); // Apply the shake animation
+      observer.unobserve(entry.target); // Stop observing after applying the animation
     }
   });
 }, { threshold: 0.5 }); // Trigger animation when 50% of the element is in view
 
-elements.forEach(el => observer.observe(el)); // Start observing the elements
-
+// Start observing the shake elements
+shakeElements.forEach(el => shakeObserver.observe(el));
