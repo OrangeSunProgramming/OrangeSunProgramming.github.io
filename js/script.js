@@ -28,7 +28,7 @@ const fadeObserver = new IntersectionObserver((entries, observer) => {
       observer.unobserve(entry.target); 
     }
   });
-}, { threshold: 0 }); // Animation triggers immediately when visible
+}, { threshold: 0.5 }); // Animation triggers immediately when visible
 
 // Observer for shakeX
 const shakeXObserver = new IntersectionObserver((entries, observer) => {
