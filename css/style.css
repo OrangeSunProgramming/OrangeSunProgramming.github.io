@@ -115,61 +115,53 @@ nav ul li a:hover {
 
 /*Carousel-container subsection of the project section */
 .carousel-container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
+    position: relative;
+    max-width: 800px; /* Adjust this according to your preference */
+    margin: 0 auto;
+    overflow: hidden; /* Ensures slides outside the visible area are hidden */
 }
 
 .carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the slide movement */
 }
 
 .carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+    min-width: 100%; /* Ensures each slide takes full width of the container */
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .carousel-item img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+    width: 100%; /* Ensure image fills the entire width of the container */
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.carousel-item p {
-  font-size: 1.1rem;
-  color: white;
-  font-weight: 300;
-}
-
-/* Carousel Buttons */
 .carousel-prev, .carousel-next {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 2rem;
-  border-radius: 50%;
-  z-index: 1;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
 }
 
 .carousel-prev:hover, .carousel-next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-prev {
-  left: 10px;
-  transform: translateY(-50%);
+    left: 10px;
 }
 
 .carousel-next {
-  right: 10px;
-  transform: translateY(-50%);
+    right: 10px;
 }
 
 /* Contact section */
