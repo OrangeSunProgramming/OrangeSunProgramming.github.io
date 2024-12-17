@@ -43,7 +43,6 @@ $(document).ready(function() {
   });
 });
 
-
 // Carousel movement functionality
 let currentIndex = 0;
 
@@ -62,3 +61,12 @@ function moveSlide(step) {
     const offset = -currentIndex * 100; // Moves the carousel based on currentIndex
     document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
 }
+
+// Add event listeners for the carousel buttons
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+  moveSlide(-1); // Move to the previous item
+});
+
+document.querySelector('.carousel-next').addEventListener('click', () => {
+  moveSlide(1); // Move to the next item
+});
