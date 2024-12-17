@@ -191,6 +191,7 @@ nav ul li a:hover {
   border: 1px solid #ccc;
 }
 
+/* Contact form button fix */
 #contact form button {
   width: 100%;
   padding: 14px;
@@ -199,6 +200,7 @@ nav ul li a:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #contact form button:hover {
