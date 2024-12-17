@@ -62,15 +62,15 @@
       <div class="carousel">
         <div class="carousel-item">
           <img src="images/pneumonia_training_graph.png" alt="Project 1">
-          <p>Project 1</p>
+          <p>Pneumonia Classification Project</p>
         </div>
         <div class="carousel-item">
           <img src="images/pneumonia_example.jpeg" alt="Project 2">
-          <p>Project 2 Description</p>
+          <p>Heart Beat Audio Classification</p>
         </div>
         <div class="carousel-item">
           <img src="images/normal_example_pneumonia_1.jpg" alt="Project 3">
-          <p>Project 3 Description</p>
+          <p>Brain Tumor Classification</p>
         </div>
       </div>
       <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -159,13 +159,11 @@
   </script>
 
   <!-- Carousel Script -->
-  <script src="js/script.js"></script>
-
   <script>
     let currentIndex = 0;
 
     function moveSlide(step) {
-      const items = document.querySelectorAll('carousel-item');
+      const items = document.querySelectorAll('.carousel-item');
       const totalItems = items.length;
 
       currentIndex += step;
@@ -182,3 +180,4 @@
   </script>
 </body>
 </html>
+
