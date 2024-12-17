@@ -144,7 +144,8 @@ nav ul li a:hover {
   font-weight: 300;
 }
 
-button {
+/* Carousel Buttons */
+.carousel-prev, .carousel-next {
   position: absolute;
   top: 50%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -157,16 +158,16 @@ button {
   z-index: 1;
 }
 
-button:hover {
+.carousel-prev:hover, .carousel-next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.prev {
+.carousel-prev {
   left: 10px;
   transform: translateY(-50%);
 }
 
-.next {
+.carousel-next {
   right: 10px;
   transform: translateY(-50%);
 }
