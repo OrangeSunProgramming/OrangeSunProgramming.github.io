@@ -234,6 +234,11 @@ nav ul li a:hover {
   font-size: 1.5em; /* Adjust icon size */
 }
 
+.contact-links a:hover i {
+  transform: scale(1.2); /* Slightly enlarges the icon */
+  transition: transform 0.2s ease;
+}
+
 /* Footer section */
 footer {
   text-align: center;
