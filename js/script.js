@@ -63,10 +63,17 @@ function moveSlide(step) {
 }
 
 // Add event listeners for the carousel buttons
-document.querySelector('.carousel-prev').addEventListener('click', () => {
-  moveSlide(-1); // Move to the previous item
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const prevButton = document.querySelector('.carousel-prev');
+  const nextButton = document.querySelector('.carousel-next');
 
-document.querySelector('.carousel-next').addEventListener('click', () => {
-  moveSlide(1); // Move to the next item
+  if (prevButton && nextButton) {
+    prevButton.addEventListener('click', () => {
+      moveSlide(-1); // Move to the previous item
+    });
+
+    nextButton.addEventListener('click', () => {
+      moveSlide(1); // Move to the next item
+    });
+  }
 });
