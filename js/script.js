@@ -47,6 +47,7 @@ $(document).ready(function() {
 let currentIndex = 0;
 
 function moveSlide(step) {
+    console.log(`Button clicked, moving slide by: ${step}`);  // Log the step to check if the function is being called
     const items = document.querySelectorAll('.carousel-item');
     const totalItems = items.length;
 
@@ -59,21 +60,6 @@ function moveSlide(step) {
     }
 
     const offset = -currentIndex * 100; // Moves the carousel based on currentIndex
+    console.log(`Current index: ${currentIndex}, translating by: ${offset}%`);
     document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
 }
-
-// Add event listeners for the carousel buttons
-document.addEventListener('DOMContentLoaded', () => {
-  const prevButton = document.querySelector('.carousel-prev');
-  const nextButton = document.querySelector('.carousel-next');
-
-  if (prevButton && nextButton) {
-    prevButton.addEventListener('click', () => {
-      moveSlide(-1); // Move to the previous item
-    });
-
-    nextButton.addEventListener('click', () => {
-      moveSlide(1); // Move to the next item
-    });
-  }
-});
