@@ -132,6 +132,13 @@ nav ul li a:hover {
     text-align: center;
 }
 
+/* Ensure the text in the carousel items is white */
+.carousel-item p {
+  color: white;  /* Changes the font color to white */
+  font-size: 1.2em; /* Optional: adjusts font size */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow effect for better readability */
+}
+
 .carousel-item img {
     width: 100%; /* Ensure image fills the entire width of the container */
     border-radius: 8px;
