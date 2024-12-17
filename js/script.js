@@ -43,3 +43,22 @@ $(document).ready(function() {
   });
 });
 
+
+// Carousel movement functionality
+let currentIndex = 0;
+
+function moveSlide(step) {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    currentIndex += step;
+
+    if (currentIndex < 0) {
+        currentIndex = totalItems - 1; // Loop back to last item
+    } else if (currentIndex >= totalItems) {
+        currentIndex = 0; // Loop back to first item
+    }
+
+    const offset = -currentIndex * 100; // Moves the carousel based on currentIndex
+    document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+}
