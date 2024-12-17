@@ -206,6 +206,34 @@ nav ul li a:hover {
   background-color: #45a049;
 }
 
+/* Style for the contact section */
+.contact-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-links li {
+  margin: 10px 0;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #fff; /* Make the link text white */
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ff7f00; /* Change color on hover */
+}
+
+.contact-links i {
+  font-size: 1.5em; /* Adjust icon size */
+}
+
 /* Footer section */
 footer {
   text-align: center;
