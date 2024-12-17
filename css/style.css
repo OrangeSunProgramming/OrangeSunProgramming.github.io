@@ -113,6 +113,64 @@ nav ul li a:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
+/*Carousel-container subsection of the project section */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.carousel-item p {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 300;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.next {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
 /* Contact section */
 #contact {
   padding: 40px;
