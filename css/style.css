@@ -116,7 +116,7 @@ nav ul li a:hover {
 /*Carousel-container subsection of the project section */
 .carousel-container {
     position: relative;
-    max-width: 800px; /* Adjust this according to your preference */
+    max-width: 800px;
     margin: 0 auto;
     overflow: hidden; /* Ensures slides outside the visible area are hidden */
 }
