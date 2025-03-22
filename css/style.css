@@ -3,6 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -11,8 +12,46 @@ body {
   color: #333;
   background: linear-gradient(to bottom, #ff8a00, #e52e71);
 }
+in case
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(to bottom, #ff8a00, #e52e71);
+  position: relative;
+  overflow-x: hidden;
+  animation: cosmicGlow 10s infinite alternate;
+}
+
+@keyframes cosmicGlow {
+  0% { background: linear-gradient(to bottom, #ff8a00, #e52e71); }
+  50% { background: linear-gradient(to bottom, #ff6f00, #d81b60); }
+  100% { background: linear-gradient(to bottom, #ff9500, #ec407a); }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white"/><circle cx="90" cy="20" r="1" fill="white"/><circle cx="50" cy="80" r="1" fill="white"/><circle cx="30" cy="50" r="1" fill="white"/></svg>') repeat;
+  opacity: 0.1;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
 
 /* Header styles */
+/*
 header {
   background: #333;
   color: #fff;
@@ -43,7 +82,54 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #4CAF50; /* Change color on hover */
+  color: #4CAF50;
+}
+in case
+*/
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to right, #1a1a1a, #333, #1a1a1a);
+  animation: headerGlow 8s infinite alternate;
+}
+
+@keyframes headerGlow {
+  0% { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  50% { box-shadow: 0 2px 15px rgba(255, 138, 0, 0.5); }
+  100% { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff8a00;
+  text-shadow: 0 0 10px rgba(255, 138, 0, 0.7);
 }
 
 /* About Me section */
@@ -65,7 +151,13 @@ nav ul li a:hover {
   margin: 20px auto;
 }
 
-.skills i {
+#about {
+  position: relative;
+  transition: transform 0.5s ease-out;
+  transform: translateY(0);
+}
+
+/*.skills i {
   font-size: 3rem;
   margin: 10px;
   animation: shake 2s infinite;
@@ -78,18 +170,38 @@ nav ul li a:hover {
   75% { transform: translateX(-10px); }
   100% { transform: translateX(0); }
 }
+in case
+*/
+
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  perspective: 1000px;
+}
+
+.skills i, .skills img {
+  font-size: 3rem;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills i:hover, .skills img:hover {
+  transform: translateZ(20px) rotateY(15deg);
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.7);
+}
 
 /* Projects section */
-#projects {
+/*#projects {
   padding: 40px;
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Blue gradient */
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   text-align: center;
 }
 
 #projects h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffffff; /* White text */
+  color: #ffffff; 
 }
 
 #projects ul {
@@ -102,15 +214,53 @@ nav ul li a:hover {
 }
 
 #projects ul li a {
-  color: #ffffff; /* White text */
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #projects ul li a:hover {
-  color: #e52e71; /* Hover effect with a contrasting color */
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  color: #e52e71; 
+  transform: scale(1.05);
+}
+in case
+*/
+
+#projects {
+  padding: 40px;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  text-align: center;
+  position: relative;
+  transition: transform 0.5s ease-out;
+  transform: translateY(0);
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+#projects ul li {
+  margin-bottom: 15px;
+}
+
+#projects ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#projects ul li a:hover {
+  color: #e52e71;
+  transform: scale(1.1) translateY(-5px);
 }
 
 /*Carousel-container subsection of the project section */
@@ -126,10 +276,26 @@ nav ul li a:hover {
     transition: transform 0.5s ease-in-out; /* Smooth transition for the slide movement */
 }
 
-.carousel-item {
-    min-width: 100%; /* Ensures each slide takes full width of the container */
+/*.carousel-item {
+    min-width: 100%;
     box-sizing: border-box;
     text-align: center;
+}
+in case
+*/
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Ensure the text in the carousel items is white */
