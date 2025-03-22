@@ -1,5 +1,5 @@
 // IntersectionObserver for triggering animations when an element is in view
-const fadeObserver = new IntersectionObserver((entries, observer) => {
+/* const fadeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate__animated', 'animate__fadeIn');
@@ -63,3 +63,39 @@ function moveSlide(step) {
     console.log(`Current index: ${currentIndex}, translating by: ${offset}%`);
     document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
 }
+*/
+
+// Update the carousel function to add/remove 'active' class
+function moveSlide(step) {
+  const items = document.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+
+  // Remove active class from current item
+  items[currentIndex].classList.remove('active');
+
+  currentIndex += step;
+
+  if (currentIndex < 0) {
+    currentIndex = totalItems - 1;
+  } else if (currentIndex >= totalItems) {
+    currentIndex = 0;
+  }
+
+  // Add active class to new current item
+  items[currentIndex].classList.add('active');
+
+  const offset = -currentIndex * 100;
+  document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+}
+
+// Initialize the first slide as active
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel-item')[0].classList.add('active');
+});
+
+// Add scroll-based parallax effect
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY;
+  document.querySelector('#about').style.transform = `translateY(${scrollPos * 0.1}px)`;
+  document.querySelector('#projects').style.transform = `translateY(${scrollPos * 0.05}px)`;
+});
